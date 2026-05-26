@@ -1,0 +1,35 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#e3f2fd', 'lineColor': '#1565c0'}}}%%
+flowchart TB
+    subgraph Clients["Клиентский уровень"]
+        WEB["Веб-браузер<br/>HTML, CSS, JavaScript"]
+        MOB["Мобильное приложение<br/>SkyNet Mobile (Kivy/KivyMD)"]
+    end
+
+    subgraph Server["Серверный уровень — skynet_web"]
+        FLASK["Flask-приложение"]
+        AUTH["Маршруты auth"]
+        MAIN["Маршруты main"]
+        API["REST API api.py"]
+        JINJA["Шаблоны Jinja2"]
+        FLASK --> AUTH
+        FLASK --> MAIN
+        FLASK --> API
+        FLASK --> JINJA
+    end
+
+    subgraph Data["Уровень данных"]
+        DB[("SQLite / PostgreSQL<br/>Roles, Users, Tickets,<br/>Comments, Knowledge_articles")]
+        FILES["Файловое хранилище<br/>вложения, аватары"]
+    end
+
+    subgraph External["Внешние сервисы"]
+        SMTP["SMTP-сервер<br/>уведомления, сброс пароля"]
+        REC["Сервис рекомендаций<br/>подбор статей БЗ (опционально)"]
+    end
+
+    WEB -->|"HTTP, сессии"| FLASK
+    MOB -->|"Локальная SQLite<br/>без серверного API"| MOB_DB[("skynet_mobile.db")]
+    FLASK --> DB
+    FLASK --> FILES
+    FLASK --> SMTP
+    API --> REC

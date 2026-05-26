@@ -1,0 +1,103 @@
+#:kivy 2.3.0
+#:import dp kivy.metrics.dp
+
+<Card>:
+    canvas.before:
+        Color:
+            rgba: self.shadow_color if self.elevation else [0, 0, 0, 0]
+        RoundedRectangle:
+            pos: self.x, self.y - dp(2)
+            size: self.size[0], self.size[1] + dp(2)
+            radius: self.radius
+        Color:
+            rgba: self.bg_color
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: self.radius
+        Color:
+            rgba: self.border_color
+        Line:
+            rounded_rectangle: (self.x, self.y, self.width, self.height, self.radius[0])
+            width: 1
+
+<AppButton>:
+    color: self.text_color
+    background_color: self.bg_color
+    canvas.before:
+        Color:
+            rgba: self.bg_color
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [self.radius, self.radius, self.radius, self.radius]
+        Color:
+            rgba: self.border_color
+        Line:
+            rounded_rectangle: (self.x, self.y, self.width, self.height, self.radius)
+            width: 1
+
+<AppInput>:
+    cursor_width: dp(1.2)
+    foreground_color: 0, 0, 0, 1
+    disabled_foreground_color: 0, 0, 0, 1
+    hint_text_color: 0.62, 0.62, 0.62, 1
+    canvas.before:
+        Color:
+            rgba: self.background_color_active if self.focus else self.background_color_inactive
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [self.radius, self.radius, self.radius, self.radius]
+        Color:
+            rgba: self.border_color
+        Line:
+            rounded_rectangle: (self.x, self.y, self.width, self.height, self.radius)
+            width: 1
+
+<AppTextArea>:
+    foreground_color: 0, 0, 0, 1
+    disabled_foreground_color: 0, 0, 0, 1
+    hint_text_color: 0.62, 0.62, 0.62, 1
+
+<NumberBadge>:
+    color: self.text_color
+    canvas.before:
+        Color:
+            rgba: self.bg_color
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [self.height / 2, self.height / 2, self.height / 2, self.height / 2]
+
+<AppSpinner>:
+    canvas.before:
+        Color:
+            rgba: self.background_color
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [dp(24), dp(24), dp(24), dp(24)]
+        Color:
+            rgba: self.border_color
+        Line:
+            rounded_rectangle: (self.x, self.y, self.width, self.height, dp(24))
+            width: 1
+
+<StatusBadge>:
+    color: self.text_color
+    canvas.before:
+        Color:
+            rgba: self.bg_color
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [self.height / 2, self.height / 2, self.height / 2, self.height / 2]
+
+<HeaderBar>:
+    canvas.before:
+        Color:
+            rgba: 0.086, 0.337, 0.62, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size

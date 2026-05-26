@@ -1,0 +1,43 @@
+%%{init: {'theme': 'base'}}%%
+flowchart TB
+    subgraph WebApp["skynet_web"]
+        RUN["run.py"]
+        INIT["app/__init__.py<br/>Flask, SQLAlchemy, Login"]
+        MODELS["app/models.py"]
+        CFG["config.py"]
+        RUN --> INIT
+        INIT --> MODELS
+        INIT --> CFG
+
+        subgraph Routes["app/routes"]
+            R_AUTH["auth.py<br/>вход, регистрация, сброс пароля"]
+            R_MAIN["main.py<br/>страницы кабинета"]
+            R_API["api.py<br/>REST API"]
+        end
+
+        INIT --> Routes
+
+        subgraph Templates["app/templates"]
+            T_PUB["main/index_public.html"]
+            T_CAB["cabinet, tickets, profile"]
+            T_KB["knowledge, knowledge_article"]
+            T_ADM["admin, users, logs, reports"]
+        end
+
+        R_MAIN --> Templates
+        R_AUTH --> Templates
+
+        STATIC["app/static<br/>style.css, JS"]
+    end
+
+    subgraph MobileApp["mobailSkyNet"]
+        MAIN_M["main.py"]
+        APP_M["skynet_app/app.py"]
+        DATA_M["skynet_app/data.py<br/>LocalRepository"]
+        SCR_M["skynet_app/screens/"]
+        KV["kv/skynet.kv"]
+        MAIN_M --> APP_M
+        APP_M --> DATA_M
+        APP_M --> SCR_M
+        APP_M --> KV
+    end

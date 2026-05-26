@@ -1,0 +1,96 @@
+[INFO   ] Logger: Record log in /home/gore/mobailSkyNet/.kivy/logs/kivy_26-04-21_9.txt
+[INFO   ] Kivy: v2.3.1
+[INFO   ] Kivy: Installed at "/home/gore/mobailSkyNet/.venv/lib/python3.12/site-packages/kivy/__init__.py"
+[INFO   ] Python: v3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]
+[INFO   ] Python: Interpreter at "/home/gore/mobailSkyNet/.venv/bin/python"
+[INFO   ] Logger: Purge log fired. Processing...
+[INFO   ] Logger: Purge finished!
+[INFO   ] Factory: 195 symbols loaded
+[INFO   ] Image: Providers: img_tex, img_dds, img_sdl2, img_pil (img_ffpyplayer ignored)
+[INFO   ] Window: Provider: sdl2
+[INFO   ] GL: Using the "OpenGL" graphics system
+[INFO   ] GL: Backend used <sdl2>
+[INFO   ] GL: OpenGL version <b'4.6 (Compatibility Profile) Mesa 25.2.8-0ubuntu0.24.04.1'>
+[INFO   ] GL: OpenGL vendor <b'Intel'>
+[INFO   ] GL: OpenGL renderer <b'Mesa Intel(R) Graphics (RPL-P)'>
+[INFO   ] GL: OpenGL parsed version: 4, 6
+[INFO   ] GL: Shading version <b'4.60'>
+[INFO   ] GL: Texture max size <16384>
+[INFO   ] GL: Texture max units <32>
+[INFO   ] Window: auto add sdl2 input provider
+[INFO   ] Window: virtual keyboard not allowed, single mode, not docked
+[INFO   ] Text: Provider: sdl2
+[INFO   ] KivyMD: 1.2.0, git-Unknown, 2026-04-21 (installed at "/home/gore/mobailSkyNet/.venv/lib/python3.12/site-packages/kivymd/__init__.py")
+[WARNING] KivyMD: Version 1.2.0 is deprecated and is no longer supported. Use KivyMD version 2.0.0 from the master branch (pip install https://github.com/kivymd/KivyMD/archive/master.zip)
+[INFO   ] Clipboard: Provider: sdl2(['clipboard_xclip', 'clipboard_xsel', 'clipboard_dbusklipper', 'clipboard_gtk3'] ignored)
+[CRITICAL] Cutbuffer: Unable to find any valuable Cutbuffer provider. Please enable debug logging (e.g. add -d if running from the command line, or change the log level in the config) and re-run your app to identify potential causes
+xclip - FileNotFoundError: [Errno 2] No such file or directory: 'xclip'
+  File "/home/gore/mobailSkyNet/.venv/lib/python3.12/site-packages/kivy/core/__init__.py", line 59, in core_select_lib
+    mod = importlib.__import__(name='{2}.{0}.{1}'.format(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1466, in __import__
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/gore/mobailSkyNet/.venv/lib/python3.12/site-packages/kivy/core/clipboard/clipboard_xclip.py", line 17, in <module>
+    p = subprocess.Popen(['xclip', '-version'], stdout=subprocess.PIPE,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.12/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+
+xsel - FileNotFoundError: [Errno 2] No such file or directory: 'xsel'
+  File "/home/gore/mobailSkyNet/.venv/lib/python3.12/site-packages/kivy/core/__init__.py", line 59, in core_select_lib
+    mod = importlib.__import__(name='{2}.{0}.{1}'.format(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1466, in __import__
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/gore/mobailSkyNet/.venv/lib/python3.12/site-packages/kivy/core/clipboard/clipboard_xsel.py", line 15, in <module>
+    p = subprocess.Popen(['xsel', '--version'], stdout=subprocess.PIPE)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.12/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+
+[WARNING] stderr: Traceback (most recent call last):
+[WARNING] stderr:   File "kivy/_event.pyx", line 235, in kivy._event.EventDispatcher.__init__
+[WARNING] stderr: TypeError: object.__init__() takes exactly one argument (the instance to initialize)
+[WARNING] stderr: 
+[WARNING] stderr: The above exception was the direct cause of the following exception:
+[WARNING] stderr: 
+[WARNING] stderr: Traceback (most recent call last):
+[WARNING] stderr:   File "/home/gore/mobailSkyNet/main.py", line 5, in <module>
+[WARNING] stderr:     SkyNetApp().run()
+[WARNING] stderr:   File "/home/gore/mobailSkyNet/.venv/lib/python3.12/site-packages/kivy/app.py", line 955, in run
+[WARNING] stderr:     self._run_prepare()
+[WARNING] stderr:   File "/home/gore/mobailSkyNet/.venv/lib/python3.12/site-packages/kivy/app.py", line 925, in _run_prepare
+[WARNING] stderr:     root = self.build()
+[WARNING] stderr:            ^^^^^^^^^^^^
+[WARNING] stderr:   File "/home/gore/mobailSkyNet/skynet_app/app.py", line 59, in build
+[WARNING] stderr:     HomeScreen(name="home"),
+[WARNING] stderr:     ^^^^^^^^^^^^^^^^^^^^^^^
+[WARNING] stderr:   File "/home/gore/mobailSkyNet/skynet_app/screens/base.py", line 24, in __init__
+[WARNING] stderr:     self.refresh()
+[WARNING] stderr:   File "/home/gore/mobailSkyNet/skynet_app/screens/public.py", line 64, in refresh
+[WARNING] stderr:     self.full_name_input = AppInput(hint_text="Как к вам обращаться")
+[WARNING] stderr:                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[WARNING] stderr:   File "/home/gore/mobailSkyNet/skynet_app/widgets/common.py", line 163, in __init__
+[WARNING] stderr:     super().__init__(**kwargs)
+[WARNING] stderr:   File "/home/gore/mobailSkyNet/.venv/lib/python3.12/site-packages/kivy/uix/textinput.py", line 585, in __init__
+[WARNING] stderr:     super().__init__(**kwargs)
+[WARNING] stderr:   File "/home/gore/mobailSkyNet/.venv/lib/python3.12/site-packages/kivy/uix/behaviors/focus.py", line 393, in __init__
+[WARNING] stderr:     super(FocusBehavior, self).__init__(**kwargs)
+[WARNING] stderr:   File "/home/gore/mobailSkyNet/.venv/lib/python3.12/site-packages/kivy/uix/widget.py", line 357, in __init__
+[WARNING] stderr:     super(Widget, self).__init__(**kwargs)
+[WARNING] stderr:   File "kivy/_event.pyx", line 238, in kivy._event.EventDispatcher.__init__
+[WARNING] stderr: TypeError: Properties ['selection_text_color'] passed to __init__ may not be existing property names. Valid properties are ['_cursor_blink', '_cursor_visual_height', '_cursor_visual_pos', '_editable', '_hint_text', '_hint_text_lines', '_ime_composition', '_ime_cursor', '_keyboard', '_lines', 'allow_copy', 'auto_indent', 'background_active', 'background_color', 'background_disabled_normal', 'background_normal', 'base_direction', 'border', 'border_color', 'center', 'center_x', 'center_y', 'children', 'cls', 'cursor', 'cursor_blink', 'cursor_col', 'cursor_color', 'cursor_pos', 'cursor_row', 'cursor_width', 'disabled', 'disabled_foreground_color', 'do_wrap', 'focus', 'focus_next', 'focus_previous', 'focused', 'font_context', 'font_family', 'font_name', 'font_size', 'foreground_color', 'halign', 'handle_image_left', 'handle_image_middle', 'handle_image_right', 'height', 'hint_text', 'hint_text_color', 'ids', 'input_filter', 'input_type', 'is_focusable', 'keyboard', 'keyboard_mode', 'keyboard_suggestions', 'line_height', 'line_spacing', 'lines_to_scroll', 'minimum_height', 'motion_filter', 'multiline', 'opacity', 'padding', 'padding_x', 'padding_y', 'parent', 'password', 'password_mask', 'pos', 'pos_hint', 'readonly', 'replace_crlf', 'right', 'scroll_distance', 'scroll_from_swipe', 'scroll_timeout', 'scroll_x', 'scroll_y', 'selection_color', 'selection_from', 'selection_text', 'selection_to', 'size', 'size_hint', 'size_hint_max', 'size_hint_max_x', 'size_hint_max_y', 'size_hint_min', 'size_hint_min_x', 'size_hint_min_y', 'size_hint_x', 'size_hint_y', 'tab_width', 'text', 'text_language', 'text_validate_unfocus', 'top', 'unfocus_on_touch', 'use_bubble', 'use_handles', 'width', 'write_tab', 'x', 'y']

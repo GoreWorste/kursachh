@@ -1,0 +1,34 @@
+%%{init: {'theme': 'base'}}%%
+flowchart LR
+    subgraph Plan["Планирование"]
+        TZ["Техническое задание"]
+        SC["Сценарии тестов"]
+    end
+
+    subgraph Exec["Выполнение"]
+        MAN["Ручное тестирование<br/>веб и мобильный клиент"]
+        FUNC["Функциональные тесты<br/>роли, заявки, БЗ"]
+        NEG["Негативные тесты<br/>валидация, доступ"]
+    end
+
+    subgraph Env["Среда"]
+        PC["GIGABYTE G6 MF<br/>Ubuntu 24.04"]
+        BR["Firefox / Chrome"]
+        PY["Python 3.12"]
+    end
+
+    subgraph Result["Результат"]
+        REP["Протокол испытаний<br/>Приложение В"]
+        FIX["Исправление дефектов"]
+    end
+
+    TZ --> SC
+    SC --> MAN
+    MAN --> FUNC
+    MAN --> NEG
+    PC --> MAN
+    BR --> FUNC
+    PY --> FUNC
+    FUNC --> REP
+    NEG --> REP
+    REP --> FIX

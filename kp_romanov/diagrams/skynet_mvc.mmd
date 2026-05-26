@@ -1,0 +1,10 @@
+%%{init: {'theme': 'base'}}%%
+flowchart LR
+    V["Представление<br/>Jinja2, HTML"]
+    C["Контроллер<br/>routes/main.py, api.py"]
+    M["Модель<br/>SQLAlchemy models.py"]
+    U["Пользователь"]
+    U --> V
+    V --> C
+    C --> M
+    M --> V

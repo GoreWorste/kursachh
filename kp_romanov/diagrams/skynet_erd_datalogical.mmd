@@ -1,0 +1,120 @@
+%%{init: {'theme': 'dark'}}%%
+erDiagram
+    Roles {
+        int role_ID PK
+        varchar role_name
+    }
+
+    Users {
+        int user_ID PK
+        varchar login
+        varchar password
+        varchar email
+        varchar full_name
+        int role_ID FK
+        datetime created_at
+    }
+
+    Statuses {
+        int status_ID PK
+        varchar status_name
+        varchar code
+    }
+
+    Categories {
+        int category_ID PK
+        varchar category_name
+        varchar code
+    }
+
+    Tickets {
+        int ticket_ID PK
+        int author_ID FK
+        int assignee_ID FK
+        int category_ID FK
+        int status_ID FK
+        varchar priority
+        varchar title
+        text description
+        datetime created_at
+        datetime updated_at
+        datetime deleted_at
+    }
+
+    Comments {
+        int comment_ID PK
+        int ticket_ID FK
+        int user_ID FK
+        text body
+        datetime created_at
+    }
+
+    Logs {
+        int log_ID PK
+        int ticket_ID FK
+        int user_ID FK
+        varchar old_status
+        varchar new_status
+        datetime created_at
+    }
+
+    Attachments {
+        int attachment_ID PK
+        int ticket_ID FK
+        varchar filename
+        int file_size
+        varchar file_path
+        datetime created_at
+    }
+
+    Knowledge_articles {
+        int article_ID PK
+        int author_ID FK
+        varchar title
+        text content
+        datetime created_at
+        datetime updated_at
+    }
+
+    Notifications {
+        int notification_ID PK
+        int user_ID FK
+        int ticket_ID FK
+        varchar notification_type
+        boolean is_read
+        datetime sent_at
+    }
+
+    Login_attempts {
+        int attempt_ID PK
+        int user_ID FK
+        varchar login
+        boolean success
+        varchar ip_address
+        datetime attempted_at
+    }
+
+    Password_reset_tokens {
+        int token_ID PK
+        int user_ID FK
+        varchar token_hash
+        datetime expires_at
+        boolean used
+        datetime created_at
+    }
+
+    Roles ||--o{ Users : role_ID
+    Users ||--o{ Tickets : author_ID
+    Users ||--o{ Tickets : assignee_ID
+    Statuses ||--o{ Tickets : status_ID
+    Categories ||--o{ Tickets : category_ID
+    Tickets ||--o{ Comments : ticket_ID
+    Users ||--o{ Comments : user_ID
+    Tickets ||--o{ Logs : ticket_ID
+    Users ||--o{ Logs : user_ID
+    Tickets ||--o{ Attachments : ticket_ID
+    Users ||--o{ Knowledge_articles : author_ID
+    Users ||--o{ Notifications : user_ID
+    Tickets ||--o{ Notifications : ticket_ID
+    Users ||--o{ Login_attempts : user_ID
+    Users ||--o{ Password_reset_tokens : user_ID

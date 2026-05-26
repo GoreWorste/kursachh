@@ -1,0 +1,25 @@
+[INFO   ] Logger: Record log in /home/gore/mobailSkyNet/.kivy/logs/kivy_26-04-21_0.txt
+[DEBUG  ] Config: Upgrading from 0 to 1
+[WARNING] Config: Upgrading configuration in progress.
+[WARNING] Config: Older configuration version detected (0 instead of 27)
+[INFO   ] Kivy: v2.3.1
+[INFO   ] Kivy: Installed at "/home/gore/mobailSkyNet/.venv/lib/python3.12/site-packages/kivy/__init__.py"
+[INFO   ] Python: v3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]
+[INFO   ] Python: Interpreter at "/home/gore/mobailSkyNet/.venv/bin/python"
+[INFO   ] Logger: Purge log fired. Processing...
+[INFO   ] Logger: Purge finished!
+[INFO   ] Factory: 195 symbols loaded
+[INFO   ] Image: Providers: img_tex, img_dds, img_sdl2 (img_pil, img_ffpyplayer ignored)
+[INFO   ] Window: Provider: sdl2
+[INFO   ] GL: Using the "OpenGL" graphics system
+[INFO   ] GL: Backend used <sdl2>
+[INFO   ] GL: OpenGL version <b'4.5 (Compatibility Profile) Mesa 25.2.8-0ubuntu0.24.04.1'>
+[INFO   ] GL: OpenGL vendor <b'Mesa'>
+[INFO   ] GL: OpenGL renderer <b'llvmpipe (LLVM 20.1.2, 256 bits)'>
+[INFO   ] GL: OpenGL parsed version: 4, 5
+[INFO   ] GL: Shading version <b'4.50'>
+[INFO   ] GL: Texture max size <16384>
+[INFO   ] GL: Texture max units <32>
+[INFO   ] Window: auto add sdl2 input provider
+[INFO   ] Window: virtual keyboard not allowed, single mode, not docked
+[INFO   ] Text: Provider: sdl2

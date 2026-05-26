@@ -1,0 +1,61 @@
+%%{init: {'theme': 'dark'}}%%
+flowchart LR
+    subgraph Core["Ядро приложения"]
+      Web[Веб-приложение]
+      Login[Авторизация]
+      Forgot[Восстановление пароля]
+      Main[Главная страница]
+      MainAuth[Главная авторизованного]
+    end
+
+    Web <--> Main
+    Login --> MainAuth
+    Login --> Forgot
+    Forgot --> Login
+    Main --> MainAuth
+
+    subgraph Client["Клиент"]
+      C1[Создать заявку]
+      C2[Мои заявки]
+      C3[Карточка заявки]
+      C4[Комментарий]
+      C5[База знаний]
+      C6[Статья]
+      C7[Профиль]
+    end
+
+    MainAuth --> C1
+    MainAuth --> C2
+    MainAuth --> C5
+    MainAuth --> C7
+    C2 --> C3
+    C3 --> C4
+    C5 --> C6
+
+    subgraph Operator["Оператор"]
+      O1[Все заявки]
+      O2[Карточка заявки]
+      O3[Смена статуса]
+      O4[Назначение исполнителя]
+      O5[Отчеты]
+    end
+
+    MainAuth --> O1
+    MainAuth --> O5
+    O1 --> O2
+    O2 --> O3
+    O2 --> O4
+
+    subgraph Admin["Администратор"]
+      A1[Пользователи]
+      A2[Добавить пользователя]
+      A3[Настройки]
+      A4[Логи]
+      A5[Отчеты и статистика]
+    end
+
+    MainAuth --> A1
+    MainAuth --> A3
+    MainAuth --> A4
+    MainAuth --> A5
+    A1 --> A2

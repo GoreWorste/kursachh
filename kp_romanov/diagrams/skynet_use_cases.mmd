@@ -1,0 +1,56 @@
+%%{init: {'theme': 'light'}}%%
+flowchart LR
+    user[Пользователь]
+    client[Клиент]
+    operator[Оператор]
+    admin[Администратор]
+
+    client --> user
+    operator --> user
+    admin --> user
+
+    subgraph System["ИС SkyNet"]
+        UC1((Войти в систему))
+        UC2((Восстановить пароль))
+        UC17((Сменить пароль))
+        UC3((Создать заявку))
+        UC4((Просмотреть свои заявки))
+        UC5((Комментировать заявку))
+        UC6((Добавить вложение))
+        UC7((Просмотреть все заявки))
+        UC8((Изменить статус заявки))
+        UC9((Назначить исполнителя))
+        UC10((Поиск и фильтрация))
+        UC15((Формировать отчеты))
+        UC16((Управлять базой знаний))
+        UC11((Управлять пользователями))
+        UC12((Настраивать систему))
+        UC13((Просматривать логи))
+        UC14((Удалить заявку))
+    end
+
+    user --- UC1
+    user --- UC2
+    user --- UC17
+
+    client --- UC3
+    client --- UC4
+    client --- UC5
+    client --- UC6
+
+    operator --- UC7
+    operator --- UC8
+    operator --- UC9
+    operator --- UC10
+    operator --- UC15
+    operator --- UC16
+
+    admin --- UC11
+    admin --- UC12
+    admin --- UC13
+    admin --- UC14
+
+    UC3 -. include .-> UC1
+    UC4 -. include .-> UC1
+    UC8 -. include .-> UC7
+    UC9 -. include .-> UC7
